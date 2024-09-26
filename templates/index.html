@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groupie Trackers</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/artists">Artists</a></li>
+                <li><a href="/locations">Locations</a></li>
+                <li><a href="/dates">Dates</a></li>
+                <li><a href="/relations">Relations</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- <div class="marquee-container">
+        <div class="marquee">
+            {{range .Artists}}
+                <img src="{{.Image}}" alt="{{.Name}}" class="artist-image">
+            {{end}}
+        </div>
+    </div> -->
+
+   
+        <div class="centered-text">
+            <h1>Welcome to Groupie Trackers</h1>
+            <p>Explore information about your favorite artists, their concert locations, dates, and more!</p>
+        </div>
+  
+
+    <div class="fullscreen-bg">
+        <img src="/static/background-1920x1201.jpg" alt="Groupie Trackers Background">
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Groupie Trackers</p>
+    </footer>
+
+    <canvas id="cursor-canvas"></canvas>
+    <!-- <script src="/static/js/main.js"></script> -->
+    <script type="module" src="/static/effects.js" ></script>
+</body>
+</html>

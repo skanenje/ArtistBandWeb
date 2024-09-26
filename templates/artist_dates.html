@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Name}} - Concert Dates</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/artists">Artists</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="artist-details">
+            <h1>{{.Name}} - Concert Dates</h1>
+            <div class="date-card">
+                <ul>
+                    {{range .Dates}}
+                    <li>{{.}}</li>
+                    {{end}}
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Groupie Tracker. All rights reserved.</p>
+    </footer>
+</body>
+</html>

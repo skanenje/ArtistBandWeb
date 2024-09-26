@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Name}} - Relations</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/artists">Artists</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="artist-details">
+            <h1>{{.Name}} - Relations</h1>
+            <div class="relation-card">
+                {{range $location, $dates := .Relations}}
+                <h2>{{$location}}</h2>
+                <ul>
+                    {{range $dates}}
+                    <li>{{.}}</li>
+                    {{end}}
+                </ul>
+                {{end}}
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Groupie Tracker. All rights reserved.</p>
+    </footer>
+</body>
+</html>

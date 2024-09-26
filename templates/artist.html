@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Name}} - Artist Details</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        #cursor-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/artists">Artists</a></li>
+                <li><a href="/locations">Locations</a></li>
+                <li><a href="/dates">Dates</a></li>
+                <li><a href="/relations">Relations</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="artist-details">
+            <img src="{{.Image}}" alt="{{.Name}}">
+            <div>
+                <h1>{{.Name}}</h1>
+                <p>Creation Date: {{.CreationDate}}</p>
+                <p>First Album: {{.FirstAlbum}}</p>
+                <h3>Members:</h3>
+                <ul>
+                    {{range .Members}}
+                    <li>{{.}}</li>
+                    {{end}}
+                </ul>
+                <a href="/artist/locations/{{.ID}}">View Locations</a><br>
+                <a href="/artist/dates/{{.ID}}">View Concert Dates</a><br>
+                <a href="/artist/relations/{{.ID}}">View Relations</a>
+            </div>
+        </div>
+    </main>
+    <canvas id="cursor-canvas"></canvas>
+
+    <footer>
+        <p>© 2023 Groupie Trackers</p>
+    </footer>
+
+    <script type="module" src="/static/effects.js" ></script>
+</body>
+</html>
